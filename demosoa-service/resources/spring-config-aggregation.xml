@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+
+
+    <bean id="areaStockHandler" class="com.jd.app.server.service.demo.handler.AreaStockHandler"
+          scope="prototype">
+        <constructor-arg name="switchKey" value="aggregation_switch_area_stock_handler"/>
+        <constructor-arg name="duccAvailConfigManager" ref="duccAvailConfigManager"/>
+        <constructor-arg name="areaStockStateExportApi" ref="areaStockStateExportApi"/>
+    </bean>
+    <bean id="partitionProductsHandler" class="com.jd.app.server.service.demo.handler.PartitionProductsHandler"
+          scope="prototype">
+        <constructor-arg name="switchKey" value="aggregation_switch_partition_products_handler"/>
+        <constructor-arg name="duccAvailConfigManager" ref="duccAvailConfigManager"/>
+        <constructor-arg name="partitionRpcServiceApi" ref="partitionRpcServiceApi"/>
+    </bean>
+
+</beans>

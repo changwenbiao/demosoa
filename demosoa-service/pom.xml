@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GBK"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jd.app.server</groupId>
+        <artifactId>demosoa</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>demosoa-service</artifactId>
+    <packaging>jar</packaging>
+    <name>demosoa-side service</name>
+    <url>http://www.360buy.com</url>
+
+    <dependencies>
+        <dependency>
+            <artifactId>commons-lang3</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.app.server</groupId>
+            <artifactId>demosoa-manager</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>ice</artifactId>
+                    <groupId>ice</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.sirector</groupId>
+            <artifactId>sirector-core</artifactId>
+            <version>0.2.1-beta</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.app.server</groupId>
+            <artifactId>demosoa-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>jd-server-service-${version}</finalName>
+    </build>
+
+</project>
